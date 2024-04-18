@@ -19,10 +19,10 @@
             $('.iframe_inner').css({
                 width:frame_W,
                 height:frame_H,
-                paddingTop:'29.923px',
-                paddingRight:'59.3078px',
-                paddingBottom:'70.923px',
-                paddingLeft:'59.3078px',
+                paddingTop:(frame_H * 0.10221465) - 65 +'px',
+                paddingRight:(frame_W * 0.10749185),
+                paddingBottom:(frame_H * 0.10221465) - 33 +'px' ,
+                paddingLeft:(frame_W * 0.10749185),
             });
 
             var type = searchParams.get('type'),

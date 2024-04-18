@@ -9,6 +9,6 @@ body {overflow-x:hidden;}
 
 .iframe_wrap {height:100vh; position:relative; display:flex; flex-wrap:wrap; align-items:center; justify-content:center;}
 .iframe_inner {background:url('../images/mo/bg_wrap_2.png') 50% no-repeat; background-size:cover; text-align:center;}
-.iframe_wrap iframe {width:100%; height:100%; border-radius: 70px;}
+.iframe_wrap iframe {width:100%; height:100%; border-radius: 40px;}
 
 #wrap {margin:0 auto; overflow-x:hidden;}
