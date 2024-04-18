@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>영화 그 이상의 다양하고 즐거운 몰입의 경험을 만듭니다. 라이프스타일 플랫폼 CGV</title>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/common.js"></script>
+
+    <script src="../js/swiper.js"></script>
+    <link rel="stylesheet" href="../css/swiper.css" type="text/css">
+
+    <link rel="stylesheet" href="../css/mo_main.css" type="text/css">
+    <script>
+        $(document).ready(function(){
+            var frame_H = ($(window).height() * 0.9);
+            var frame_W = (frame_H * 0.52299829);
+
+            $('.iframe_inner').css({
+                width:frame_W,
+                height:frame_H,
+                paddingTop:'29.923px',
+                paddingRight:'59.3078px',
+                paddingBottom:'70.923px',
+                paddingLeft:'59.3078px',
+            });
+
+            var type = searchParams.get('type'),
+                path = searchParams.get('path');
+
+                if(path == null){
+                    path = 'main'
+                }
+
+                console.log(path);
+            
+
+            $('iframe').attr('src','./mo_'+type+'_'+path+'.html');
+        });
+
+        const searchParams = new URLSearchParams(location.search);
+    </script>
+</head>
+<body>
+
+    <div class="iframe_wrap">
+        <div class="iframe_inner">
+            <iframe />
+        </div>
+    </div>
+    
+</body>
+</html>

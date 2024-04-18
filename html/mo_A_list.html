@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>영화 그 이상의 다양하고 즐거운 몰입의 경험을 만듭니다. 라이프스타일 플랫폼 CGV</title>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/common.js"></script>
+
+    <script src="../js/swiper.js"></script>
+    <link rel="stylesheet" href="../css/swiper.css" type="text/css">
+
+    <link rel="stylesheet" href="../css/mo_main.css" type="text/css">
+    <link rel="stylesheet" href="../css/main_a.css" type="text/css">
+    <style>
+        .black {position:relative;}
+        .black:after {background-color:#000; content:''; position:absolute; top:0; right:0; bottom:79px; left:0; z-index:-1;}
+        .list_top_menu {position:fixed;top:0; left:0; right:0; z-index: 2;}
+        .list_top_menu > img {position:relative; z-index:5;}
+        .list_img_b {position:relative;}
+        .list_img_b a {position:absolute; top:115px; right:22px; display:block; width:40px; height:40px; border:2px solid red; }
+        .filter_menu {position:fixed; top:0; right:0px;; bottom:0; left:0; transition:all 0.3s; z-index: 5; transform:translateX(500px);}
+        .filter_menu a {display:block;height:100%;}
+    </style>
+    <script>
+        $(document).ready(function(){
+        
+            $('.list_img_b a').click(function(){
+                $('.filter_menu').css({'transform':'translateX(0px)'})
+            })
+            $('.filter_menu a').click(function(){
+                $('.filter_menu').removeAttr('style');
+            })
+        
+        });
+
+        let preScrollTop = 0;
+
+        window.addEventListener('scroll',() => {
+            let nextScrollTop = window.scrollY;
+        
+            if(preScrollTop < nextScrollTop) {
+                $('.action_bar').css({
+                    bottom:-($('.action_bar').height())
+                });
+                $('.float_wrap').removeAttr('style');
+                $('.top_menu').css({top:'60px'});
+            }
+            else { // (preScrollTop > nextScrollTop)
+                $('.action_bar').removeAttr('style');
+                $('.float_wrap').css({
+                    bottom:$('.action_bar').height() + 20
+                });
+                $('.top_menu').removeAttr('style');
+            }
+            preScrollTop = nextScrollTop;
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div class="list_top_menu">
+            <img src="../images/mo/Type_A/A/list_top.png" alt="">
+            <div class="top_menu"><img src="../images/mo/Type_A/A/list_top_2.png" alt=""></div>
+        </div>
+        <div class="list_img_a">
+            <a href="../html/mo_A_detail.html"><img src="../images/mo/Type_A/A/list_img_a.png" alt=""></a>
+        </div>
+        <div class="list_img_b">
+            <img src="../images/mo/Type_A/A/list_img_b.png" alt="">
+            <a href="#none"></a>
+        </div>
+        <div class="filter_menu">
+            <a href="#none"><img src="../images/mo/Type_A/A/filter.png" alt=""></a>
+        </div>
+    </div>
+
+
+    
+    <!-- action bar -->
+    <div class="action_bar">
+        <a href="#none"><img src="../images/mo/Type_A/A/main_actionbar.png"></a>
+    </div>
+    <!-- //action bar -->
+
+    <!-- loading -->
+    <div class="preloader_wrap">
+        <div class="preloader">
+            <div class="spinner_layer">
+                <div class="circle_clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap_patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle_clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //loading -->
+</body>
+</html>

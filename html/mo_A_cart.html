@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>영화 그 이상의 다양하고 즐거운 몰입의 경험을 만듭니다. 라이프스타일 플랫폼 CGV</title>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/common.js"></script>
+
+    <script src="../js/swiper.js"></script>
+    <link rel="stylesheet" href="../css/swiper.css" type="text/css">
+
+    <link rel="stylesheet" href="../css/mo_main.css" type="text/css">
+    <link rel="stylesheet" href="../css/main_a.css" type="text/css">
+    <style>
+        .cart_top_menu {position:fixed;top:0; left:0; right:0; z-index: 2;}
+        .cart_top_menu > img {position:relative; z-index:5;}
+        .cart_img {padding-top:80px;}
+    </style>
+    <script>
+        $(document).ready(function(){
+        
+            $('.list_img_b a').click(function(){
+                $('.filter_menu').css({'transform':'translateX(0px)'})
+            })
+            $('.filter_menu a').click(function(){
+                $('.filter_menu').removeAttr('style');
+            })
+        
+        });
+
+        let preScrollTop = 0;
+
+        window.addEventListener('scroll',() => {
+            let nextScrollTop = window.scrollY;
+        
+            if(preScrollTop < nextScrollTop) {
+                $('.action_bar').css({
+                    bottom:-($('.action_bar').height())
+                });
+                $('.float_wrap').removeAttr('style');
+            }
+            else { // (preScrollTop > nextScrollTop)
+                $('.action_bar').removeAttr('style');
+                $('.float_wrap').css({
+                    bottom:$('.action_bar').height() + 20
+                });
+            }
+            preScrollTop = nextScrollTop;
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div class="cart_top_menu">
+            <img src="../images/mo/Type_A/A/cart_header.png" alt="">
+        </div>
+        <div class="cart_img">
+            <a href="../html/mo_A_main.html"><img src="../images/mo/Type_A/A/cart_img.png" alt=""></a>
+        </div>        
+    </div>
+
+
+    
+    <!-- action bar -->
+    <div class="action_bar">
+        <a href="#none"><img src="../images/mo/Type_A/A/cart_actionbar.png"></a>
+    </div>
+    <!-- //action bar -->
+
+    <!-- loading -->
+    <div class="preloader_wrap">
+        <div class="preloader">
+            <div class="spinner_layer">
+                <div class="circle_clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap_patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle_clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //loading -->
+</body>
+</html>

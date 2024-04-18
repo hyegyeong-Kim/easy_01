@@ -1,0 +1,35 @@
+@charset 'UTF-8';
+
+@import url('../css/common.css');
+
+body::-webkit-scrollbar {display: none;}
+img {max-width:100%;}
+
+body {background-color:#000; overflow-x:hidden;}
+
+a.home {position:absolute; display:block; top:0; width:40px; height:40px;}
+
+.content {position:relative;}
+.inner {width:94%; margin:0 auto;}
+#wrap {margin:0 auto; background-color:#000; overflow-x:hidden; position:relative;}
+
+/*-------------------------------*/
+.action_bar a {position:absolute; bottom:0; display:inline-block; width:50px; height:94px;}
+header .header_btn {position:absolute; top:0; right:0; left:0}
+.content {background-color:#fff;}
+.inner {width:94%; margin:0 auto;}
+a.close{position:absolute; display:block; top:8px; right:5px; width:40px; height:40px; z-index: 15;}
+.content {position:relative;}
+.title {position:absolute;}
+.key {position:absolute; bottom:0px; left:0;}
+/* a {position:absolute; display:block; top:0; width:40px; height:40px;} */
+a.home {top:10px; left:10px}
+a.talk, a.movie, a.cgvbag {width:33.3333%; height:40px; top:745px; position:absolute;}
+a.talk {left:0}
+a.movie {left:33.3333%}
+a.cgvbag {left:66.666%}
+a.close {right:0 !important;}
+.action_bar .homego {left:32px !important;}
+.action_bar .review {left:210px !important;}
+.action_bar .mypage {left:initial !important; right:35px;}
+

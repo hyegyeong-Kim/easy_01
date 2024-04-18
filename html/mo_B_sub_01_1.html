@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>영화 그 이상의 다양하고 즐거운 몰입의 경험을 만듭니다. 라이프스타일 플랫폼 CGV</title>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/common.js"></script>
+
+    <script src="../js/swiper.js"></script>
+    <link rel="stylesheet" href="../css/swiper.css" type="text/css">
+
+    <link rel="stylesheet" href="../css/main_b_sub_1.css" type="text/css">
+    <script>
+        $(document).ready(function(){
+
+            
+        });
+
+        let preScrollTop = 0;
+
+        window.addEventListener('scroll',() => {
+            let nextScrollTop = window.scrollY;
+        
+            if(preScrollTop < nextScrollTop) {
+                $('.action_bar').css({
+                    bottom:-($('.action_bar').height())
+                });
+                $('.float_wrap').removeAttr('style');
+            }
+            else { // (preScrollTop > nextScrollTop)
+                $('.action_bar').removeAttr('style');
+                $('.float_wrap').css({
+                    bottom:$('.action_bar').height() + 20
+                });
+            }
+            preScrollTop = nextScrollTop;
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <header style="margin-top:10px;">
+            <img src="../images/mo/Type_B/sub_Header.png" alt="">
+            <a href="../html/mo_B_main.html" class="sub_home" style="    display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50px;
+            height: 78px;"></a>
+        </header>
+
+        <div id="container" style="margin-top: -10px; padding-top:20px; background-color: #fff;">
+            <div class="content">
+                <img src="../images/mo/Type_B/sub_댓글영역.png" alt="">
+            </div>
+            <img src="../images/mo/Type_B/Key.png" alt="" class="key">
+        </div>
+        <footer>
+        </footer>
+    </div>
+
+
+    <!-- loading -->
+    <div class="preloader_wrap">
+        <div class="preloader">
+            <div class="spinner_layer">
+                <div class="circle_clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap_patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle_clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //loading -->
+</body>
+</html>

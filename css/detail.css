@@ -1,0 +1,41 @@
+@charset 'UTF-8';
+
+@import url('../css/common.css');
+
+#wrap {margin:0 auto; padding:0 20px;}
+
+#container {width:1280px; margin:50px auto 0;}
+
+.goods {display:flex; flex-wrap:wrap;}
+.goods p {width:630px; margin-right:70px;}
+.goods span {width:580px;}
+
+.matching {margin:120px auto;}
+.matching h2 {margin-bottom:30px; font-size:24px; font-weight:500;}
+.swiper_wrap {position:relative;}
+.swiper_wrap [class*='swiper-button-'] {width:50px; height:50px; margin-top:-50px; margin-left:-35px; font-size:0; background-color:rgba(0,0,0,0.1); backdrop-filter: blur(4px); border-radius:50%;}
+.swiper_wrap [class*='swiper-button-']:after {width:24px; height:24px; font-size:0; background:url('../images/pc/swiper_arrow.png') 50% no-repeat; background-size:cover;}
+.swiper-button-next {margin-right:-35px;}
+.swiper-button-prev {transform:rotate(180deg);}
+
+.tab_content > div {margin:60px auto 0;}
+.tab_content > div img {width:1000px; margin:0 auto; display:block;}
+.detail {height:1200px; padding-bottom:100px; position:relative; overflow:hidden;}
+.detail.open {height:auto;}
+.detail button {width:1280px; margin:0 auto; background-color:#fff; border:1px solid #aaa; position:absolute; bottom:0; left:0;}
+.detail button em {font-size:14px; font-weight:400; font-style:normal; line-height:58px; display:inline-flex; align-items:center;}
+.detail button em:after {width:14px; height:14px; margin-left:6px; background:url('../images/pc/h2_arrow.png') 50% no-repeat; background-size:cover; content:''; display:inline-block; transform:rotate(90deg)}
+.detail.open button em:after {transform:rotate(-90deg);}
+
+.option_layer {width:100%; position:fixed; bottom:0; left:0; z-index:1;}
+.option_layer p {width:1000px; margin:0 auto; text-align:right;}
+.option_layer div {padding:50px 0; background-color:#F9F7F8; display:none;}
+.option_layer div img {width:1000px; margin:0 auto; display:block;}
+.option_layer button {margin-right:50px; padding:19px 70px 18px; background-color:#8E2740; transform:translateY(100%); transition:transform 0.25s;}
+.option_layer.active button {transform:translateY(0);}
+.option_layer em {color:#fff; font-size:16px; font-weight:700; font-style:normal; display:inline-flex; align-items:center;}
+.option_layer em:after {width:16px; height:16px; margin-left:6px; background:url('../images/pc/icon_arrow_white.png') 50% no-repeat; background-size:cover; content:''; display:block; transform:rotate(180deg); transition:transform 0.25s;}
+.option_layer button.open em:after {transform:rotate(0);}
+
+footer .option_layer {margin-bottom:0; background-color:transparent; position:static;}
+footer .option_layer div {margin-top:0;}

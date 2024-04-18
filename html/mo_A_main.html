@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>영화 그 이상의 다양하고 즐거운 몰입의 경험을 만듭니다. 라이프스타일 플랫폼 CGV</title>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/common.js"></script>
+
+    <script src="../js/swiper.js"></script>
+    <link rel="stylesheet" href="../css/swiper.css" type="text/css">
+
+    <link rel="stylesheet" href="../css/mo_main.css" type="text/css">
+    <link rel="stylesheet" href="../css/main_a.css" type="text/css">
+    <script>
+        $(document).ready(function () {
+            var option_visual = {
+                slidesPerView: 1.4,
+                /*autoplay: {
+                    delay: 3000,
+                },*/
+                spaceBetween: 20,
+                loop: false,
+                keyboard: {
+                    enabled: true,
+                },
+                on: {
+                    init: function () { },
+                    slideChange: function () {
+                        $('#wrap').attr('class', 'main bg_0'+(swiper.realIndex + 1))
+                    },
+                },
+                navigation: {
+                    nextEl: '.visual .swiper-button-next',
+                    prevEl: '.visual .swiper-button-prev',
+                },
+            };
+
+           
+
+            var swiper = new Swiper('.visual.swiper-container', option_visual);
+
+            $('.category').click(function(){
+                console.log('hihi')
+                console.log($('.category_menu'))
+                $('.category_menu').css({'transform':'translateX(0px)'})
+                $('#wrap').css({'display':'none'})
+            })
+            $('.category_menu').click(function(){
+                $('.category_menu').removeAttr('style');
+                $('#wrap').removeAttr('style');
+            })
+        });
+
+        let preScrollTop = 0;
+
+        window.addEventListener('scroll', () => {
+            let nextScrollTop = window.scrollY;
+
+            if (preScrollTop < nextScrollTop) {
+                $('.action_bar').css({
+                    bottom: -($('.action_bar').height())
+                });
+            }
+            else { // (preScrollTop > nextScrollTop)
+                $('.action_bar').removeAttr('style');
+            }
+            preScrollTop = nextScrollTop;
+        });
+    </script>
+    <style>
+        body {background-color: #fff;}
+        .main_visual {padding:0 20px; background-color:#fff !important;}
+        .action_bar .category {width:50px; height:50px; position:absolute; bottom:28px; left:26px; display:block; z-index:100;}
+        .action_bar .quick {width:50px; height:50px; position:absolute; bottom:28px; right:26px; display:block; border:1px solid red; z-index:100;}
+        .category_menu {position:absolute; top:0; right:0px;; bottom:0; left:0; transition:all 0.3s; z-index: 100; transform:translateX(500px);}
+   </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div>
+            <img src="../images/mo/Type_A/A/A_main_top.png" alt="">
+        </div>
+        <div class="main_visual">
+            <div class="visual swiper-container">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <a href="../html/mo_A_list.html"><img src="../images/mo/Type_A/A/baner1.png" /></a></li>
+                    <li class="swiper-slide"><a href="#none"><img src="../images/mo/Type_A/A/baner2.png" /></a></li>
+                    <li class="swiper-slide"><a href="#none"><img src="../images/mo/Type_A/A/baner3.png" /></a></li>
+                    <li class="swiper-slide"><a href="#none"><img src="../images/mo/Type_A/A/baner4.png" /></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            <img src="../images/mo/Type_A/A/A_main_bottom.png" alt="">
+        </div>
+    </div>
+    <div class="category_menu">
+        <img src="../images/mo/Type_A/A/category.png" alt="">
+    </div>
+
+    <!-- action bar -->
+    <div class="action_bar">
+        <img src="../images/mo/Type_A/A/main_actionbar.png">
+        <a href="#none" class="category"></a>
+        <a href="#none" class="quick"></a>
+    </div>
+    <!-- //action bar -->
+
+    <!-- loading -->
+    <div class="preloader_wrap">
+        <div class="preloader">
+            <div class="spinner_layer">
+                <div class="circle_clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap_patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle_clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //loading -->
+</body>
+
+</html>

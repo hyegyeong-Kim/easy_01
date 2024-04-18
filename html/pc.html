@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>영화 그 이상의 다양하고 즐거운 몰입의 경험을 만듭니다. 라이프스타일 플랫폼 CGV</title>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/common.js"></script>
+
+    <script src="../js/swiper.js"></script>
+    <link rel="stylesheet" href="../css/swiper.css" type="text/css">
+
+    <link rel="stylesheet" href="../css/mo_main.css" type="text/css">
+    <link rel="stylesheet" href="../css/main_a.css" type="text/css">
+    <style>
+        body {background-color:#232323;}
+        body > div > div {width:100%;}
+        .action_bar {width:500px; margin-left:-250px; left:50%;}
+    </style>
+    <script>
+        $(document).ready(function () {
+            var option_visual = {
+                slidesPerView: 1.4,
+                /*autoplay: {
+                    delay: 3000,
+                },*/
+                spaceBetween: 20,
+                loop: false,
+                keyboard: {
+                    enabled: true,
+                },
+                on: {
+                    init: function () { },
+                    slideChange: function () {
+                        $('#wrap').attr('class', 'main bg_0'+(swiper.realIndex + 1))
+                    },
+                },
+                navigation: {
+                    nextEl: '.visual .swiper-button-next',
+                    prevEl: '.visual .swiper-button-prev',
+                },
+            };
+
+            var option_sec04 = {
+                slidesPerView: 1.01,
+                autoplay: {
+                    delay: 3000,
+                },
+                spaceBetween: 8,
+                loop: false,
+                keyboard: {
+                    enabled: true,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                on: {
+                    init: function () { },
+                    slideChange: function () { },
+                },
+                navigation: {
+                    nextEl: '.visual .swiper-button-next',
+                    prevEl: '.visual .swiper-button-prev',
+                },
+            };
+
+            var option_sec07 = {
+                slidesPerView: 1.45,
+                autoplay: {
+                    delay: 3000,
+                },
+                spaceBetween: 8,
+                loop: false,
+                keyboard: {
+                    enabled: true,
+                },
+                pagination: {
+                    el: '.sec07 .swiper-pagination',
+                    clickable: true,
+                },
+                on: {
+                    init: function () { },
+                    slideChange: function () { },
+                },
+                navigation: {
+                    nextEl: '.visual .swiper-button-next',
+                    prevEl: '.visual .swiper-button-prev',
+                },
+            };
+
+            var swiper = new Swiper('.visual.swiper-container', option_visual);
+
+            var swiper1 = new Swiper('.sec04 .swiper-container', option_sec04);
+            var swiper2 = new Swiper('.sec06 .swiper-container', option_sec04);
+            var swiper3 = new Swiper('.sec07 .swiper-container', option_sec07);
+        });
+
+        let preScrollTop = 0;
+
+        window.addEventListener('scroll', () => {
+            let nextScrollTop = window.scrollY;
+
+            if (preScrollTop < nextScrollTop) {
+                $('.action_bar').css({
+                    bottom: -($('.action_bar').height())
+                });
+            }
+            else { // (preScrollTop > nextScrollTop)
+                $('.action_bar').removeAttr('style');
+            }
+            preScrollTop = nextScrollTop;
+        });
+    </script>
+</head>
+
+<body>
+    <div style="display:flex; justify-content:center;">
+        <!-- left -->
+        <div class="left">Left</div>
+        <!-- //left -->
+        <div style="width:500px; background-color:#fff; position:relative;">
+            <div id="wrap" class="main bg_01">
+                <header><img src="../images/mo/Type_A/Header.png" alt="" /></header>
+
+                <div id="container">
+                    <div class="content">
+                        <section class="main_visual">
+                            <p style="margin:0 -20px;"><img src="../images/mo/Type_A/Menu.png" alt="" /></p>
+
+                            <div class="visual swiper-container">
+                                <ul class="swiper-wrapper">
+                                    <li class="swiper-slide"><img src="../images/mo/Type_A/Rank2.png" /></li>
+                                    <li class="swiper-slide"><img src="../images/mo/Type_A/Rank1.png" /></li>
+                                    <li class="swiper-slide"><img src="../images/mo/Type_A/Rank3.png" /></li>
+                                    <li class="swiper-slide"><img src="../images/mo/Type_A/Rank4.png" /></li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <div>
+                            <img src="../images/mo/Type_A/Frame 48114658.png" alt="" />
+                            <img src="../images/mo/Type_A/선호배우영화.png" alt="" />
+                        </div>
+
+                        <section class="sec04">
+                            <p style="margin:0 -20px;"><img src="../images/mo/Type_A/Frame-48114632.png" /></p>
+                            <div class="swiper-container">
+                                <ul class="swiper-wrapper">
+                                    <li class="swiper-slide"><img src="../images/mo/Type_A/Frame 48114666.png" /></li>
+                                    <li class="swiper-slide"><img src="../images/mo/Type_A/Frame 48114665.png" /></li>
+                                    <li class="swiper-slide"><img src="../images/mo/Type_A/Frame 48114660.png" /></li>
+                                </ul>
+                            </div>
+                            <p style="margin:40px -20px;"><img src="../images/mo/Type_A/Frame 48114646.png"/></p>
+                            <p style="margin:40px 0;"><img src="../images/mo/Type_A/Frame 48114646_1.png" /></p>
+                        </section>
+
+                        <section class="sec06">
+                            <p style="margin:0 -20px 24px;"><img src="../images/mo/Type_A/tit_06.png" /></p>
+                            <div class="swiper-container">
+                                <ul class="swiper-wrapper">
+                                    <li class="swiper-slide"><img src="../images/mo/Type_A/sec06_slide01.png" /></li>
+                                    <li class="swiper-slide"><img src="../images/mo/Type_A/sec06_slide02.png" /></li>
+                                    <li class="swiper-slide"><img src="../images/mo/Type_A/sec06_slide03.png" /></li>
+                                </ul>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <p style="margin:48px -20px 0"><img src="../images/mo/Type_A/Frame-48114674.png"/></p>
+                        </section>
+
+                        <section class="sec07">
+                            <p style="margin:0 -20px 24px;"><img src="../images/mo/Type_A/tit_07.png" /></p>
+                            <div class="swiper-container">
+                                <ul class="swiper-wrapper">
+                                    <li class="swiper-slide"><img src="../images/mo/Type_A/sec07_slide01.png" /></li>
+                                    <li class="swiper-slide"><img src="../images/mo/Type_A/sec07_slide02.png" /></li>
+                                    <li class="swiper-slide"><img src="../images/mo/Type_A/sec07_slide03.png" /></li>
+                                    <li class="swiper-slide"><img src="../images/mo/Type_A/sec07_slide04.png" /></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <footer><img src="../images/mo/Type_A/Footer.png" /></footer>
+            </div>
+
+            <!-- action bar -->
+            <div class="action_bar">
+                <a href="./mobile.html?type=A&path=지금예매"><img src="../images/mo/Type_A/action_bar.png"></a>
+            </div>
+            <!-- //action bar -->
+        </div>
+        <!-- right -->
+        <div class="right">Right</div>
+        <!-- //right -->
+    </div>
+
+    <!-- loading -->
+    <div class="preloader_wrap">
+        <div class="preloader">
+            <div class="spinner_layer">
+                <div class="circle_clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap_patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle_clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //loading -->
+</body>
+
+</html>
