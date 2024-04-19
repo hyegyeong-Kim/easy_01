@@ -40,10 +40,12 @@
                 console.log($('.category_menu'))
                 $('.category_menu').css({'transform':'translateX(0px)'})
                 $('#wrap').css({'display':'none'})
+                $('body').addClass('hidden')
                 $('.action_bar').css({'display':'none'})
             })
             $('.category_menu .close').click(function(){
                 $('.category_menu').removeAttr('style');
+                $('body').removeClass('hidden')
                 $('#wrap').removeAttr('style');
                 $('.action_bar').removeAttr('style');
             })
@@ -69,10 +71,11 @@
     </script>
     <style>
         body {background-color: #fff;}
+        .hidden {overflow-y:hidden;}
         .action_bar .category_btn {width:60px; height:60px; position:absolute; bottom:47px; left:26px; display:block; z-index:100;}
         .category_menu {position:absolute; top:0; right:0px;; bottom:0; left:0; transition:all 0.3s; z-index: 100; transform:translateX(1000px);}
         .B_main_bottom {margin-top:60px;}
-        .category_menu .close {width:60px; height:60px; position:absolute; top:11px; right:13px; display:block; border:1px solid red;}
+        .category_menu .close {width:60px; height:60px; position:absolute; top:11px; right:13px; display:block;}
         .category_menu .check {width:200px; height:100px; position:absolute; top:601px; right:150px; display:block;}
 
    </style>
