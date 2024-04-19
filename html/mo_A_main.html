@@ -31,9 +31,57 @@
                 },
             };
 
+            var option_sec04 = {
+                slidesPerView: 1,
+                autoplay: {
+                    delay: 3000,
+                },
+                spaceBetween: 8,
+                loop: false,
+                keyboard: {
+                    enabled: true,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                on: {
+                    init: function () { },
+                    slideChange: function () { },
+                },
+                navigation: {
+                    nextEl: '.visual .swiper-button-next',
+                    prevEl: '.visual .swiper-button-prev',
+                },
+            };
+
+            var option_sec05 = {
+                slidesPerView: 2.2,
+                spaceBetween: 8,
+                loop: false,
+                keyboard: {
+                    enabled: true,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                on: {
+                    init: function () { },
+                    slideChange: function () { },
+                },
+                navigation: {
+                    nextEl: '.visual .swiper-button-next',
+                    prevEl: '.visual .swiper-button-prev',
+                },
+            };
+
+
            
 
-            var swiper = new Swiper('.visual.swiper-container', option_visual);
+            var swiper = new Swiper('.top_visual .visual.swiper-container', option_sec04);
+            var swiper = new Swiper('.main_visual .visual.swiper-container', option_visual);
+            var swiper = new Swiper('.mid_visual .visual.swiper-container', option_sec05);
 
             $('.category').click(function(){
                 console.log('hihi')
@@ -93,7 +141,7 @@
                 $('#wrap').css({'display':'block'})
             })
 
-            $('.A_main_bottom a').click(function(){
+            $('.A_main_footer a').click(function(){
                $('html, body').animate({
                 scrollTop:0
                },1000);
@@ -121,7 +169,9 @@
     <style>
         body {background-color: #fff;}
         #wrap > div:first-of-type {position:relative;}
-        .main_visual {padding: 0px 26px; background-color:#fff !important;}
+        .top_visual {margin-top:30px; margin-bottom:20px; padding: 0px 26px; background-color:#fff !important;}
+        .main_visual {margin-bottom:60px; padding: 0px 26px; background-color:#fff !important;}
+        .mid_visual {margin-bottom:80px; padding: 0px 26px;}
         .we_btn {width:60px; height:60px; position:absolute; top:17px; right:7px;}
         .today_btn {width:60px; height:60px; position:absolute; top:17px; right:72px;}
         .search_btn {height:60px; position:absolute; top:95px; left:0; right:0;}
@@ -135,8 +185,9 @@
         .quick_menu img, .today_menu img, .we_menu img {position:relative; z-index:6;}
         .quick_menu em.active, .today_menu em.active, .we_menu em.active {position:fixed; top:0; left:0; right:0; bottom:0; background-color:rgba(0,0,0,0.5); display:block; z-index:2;
         }
-        .A_main_bottom {position:relative; background-color:#333 ;}
-        .A_main_bottom a {width:60px; height:60px; position:absolute; right:21px; bottom:19px; display:inline-block;}
+        .A_main_bottom img {display:block;}
+        .A_main_footer {position:relative; background-color:#333 ;}
+        .A_main_footer a {width:60px; height:60px; position:absolute; right:21px; bottom:19px; display:inline-block;}
    
    </style>
 </head>
@@ -147,7 +198,15 @@
             <a href="#none" class="search_btn"></a>
             <a href="#none" class="today_btn"></a>
             <a href="#none" class="we_btn"></a>
-            <img src="../images/mo/Type_A/A/A_main_top_01.png" alt="">
+            <img src="../images/mo/Type_A/A/A_main_top_02.png" alt="">
+        </div>
+        <div class="top_visual">
+            <div class="visual swiper-container">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide"><a href="../html/mo_A_list.html"><img src="../images/mo/Type_A/A/A_main_banner_01.png"/></a></li>
+                    <li class="swiper-slide"><a href="../html/mo_A_list.html"><img src="../images/mo/Type_A/A/A_main_banner_02.png"/></a></li>
+                </ul>
+            </div>
         </div>
         <div class="main_visual">
             <div class="visual swiper-container">
@@ -160,9 +219,26 @@
                 </ul>
             </div>
         </div>
-
+        <div>
+            <img src="../images/mo/Type_A/A/A_main_mid.png" alt="">
+        </div>
+        <div class="mid_visual">
+            <div class="visual swiper-container">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide"><img src="../images/mo/Type_A/A/mid_1.png"/></a></li>
+                    <li class="swiper-slide"><img src="../images/mo/Type_A/A/mid2.png"/></a></li>
+                    <li class="swiper-slide"><img src="../images/mo/Type_A/A/mid3.png"/></a></li>
+                    <li class="swiper-slide"><img src="../images/mo/Type_A/A/mid4.png"/></a></li>
+                   
+                </ul>
+            </div>
+        </div>
         <div class="A_main_bottom">
-            <img src="../images/mo/Type_A/A/A_main_bottom_01.png" alt="">
+            <img src="../images/mo/Type_A/A/A_main_bottom_02.png" alt="">
+        </div>
+
+        <div class="A_main_footer">
+            <img src="../images/mo/Type_A/A/A_main_footer.png" alt="">
             <a href="#none"></a>
         </div>
     </div>
