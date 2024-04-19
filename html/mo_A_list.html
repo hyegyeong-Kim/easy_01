@@ -17,19 +17,24 @@
         .black:after {background-color:#000; content:''; position:absolute; top:0; right:0; bottom:79px; left:0; z-index:-1;}
         .list_top_menu {position:fixed;top:0; left:0; right:0; z-index: 2;}
         .list_top_menu > img {position:relative; z-index:5;}
+        .list_top_menu .top_menu {position:absolute; top:-80px;}
         .list_img_b {position:relative;}
-        .list_img_b a {position:absolute; top:115px; right:22px; display:block; width:40px; height:40px; border:2px solid red; }
-        .filter_menu {position:fixed; top:0; right:0px;; bottom:0; left:0; transition:all 0.3s; z-index: 5; transform:translateX(1000px);}
-        .filter_menu a {display:block;height:100%;}
+        .list_img_b a {position:absolute; top:115px; right:22px; display:block; width:40px; height:40px;}
+        .filter_menu {text-align:right; position:fixed; top:0; right:0px;; bottom:0; left:0; transition:all 0.3s; z-index: 5; transform:translateX(1000px);}
+        .filter_menu em.active {position:fixed; top:0; left:0; right:0; bottom:0; background-color:rgba(0,0,0,0.5); display:block; z-index:2;
+        }
+        .filter_menu img {width:66%; position:relative; z-index:6;}
     </style>
     <script>
         $(document).ready(function(){
         
             $('.list_img_b a').click(function(){
                 $('.filter_menu').css({'transform':'translateX(0px)'})
+                $('.filter_menu em').addClass('active')
             })
-            $('.filter_menu a').click(function(){
+            $('.filter_menu').click(function(){
                 $('.filter_menu').removeAttr('style');
+                $('.filter_menu em').removeClass('active')
             })
         
         });
@@ -44,7 +49,7 @@
                     bottom:-($('.action_bar').height())
                 });
                 $('.float_wrap').removeAttr('style');
-                $('.top_menu').css({top:'54px'});
+                $('.top_menu').css({top:'58px'});
             }
             else { // (preScrollTop > nextScrollTop)
                 $('.action_bar').removeAttr('style');
@@ -70,9 +75,11 @@
             <img src="../images/mo/Type_A/A/list_img_b.png" alt="">
             <a href="#none"></a>
         </div>
-        <div class="filter_menu">
-            <a href="#none"><img src="../images/mo/Type_A/A/filter.png" alt=""></a>
-        </div>
+    </div>
+
+    <div class="filter_menu">
+        <img src="../images/mo/Type_A/A/filter_menu_01.png" alt="">
+        <em></em>
     </div>
 
 

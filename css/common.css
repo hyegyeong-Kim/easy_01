@@ -76,7 +76,7 @@ button {cursor:pointer;}
 	to{-webkit-transform:rotate(130deg);transform:rotate(130deg)}
 }
 
-.action_bar {border-top:1px solid #F9F7F8; position:fixed; right:0; bottom:0; left:0; z-index:99; transition:bottom 0.25s;}
+.action_bar {position:fixed; right:0; bottom:0; left:0; z-index:99; transition:bottom 0.25s;}
 .action_bar ul {background-color:#fff; display:flex; justify-content:space-between;}
 .action_bar li {width:75px;}
 .action_bar a, .action_bar img {display:block;}

@@ -16,20 +16,14 @@
     <script>
         $(document).ready(function () {
             var option_visual = {
-                slidesPerView: 1.4,
+                slidesPerView: 1.1,
                 /*autoplay: {
                     delay: 3000,
                 },*/
-                spaceBetween: 20,
+                spaceBetween: 15,
                 loop: false,
                 keyboard: {
                     enabled: true,
-                },
-                on: {
-                    init: function () { },
-                    slideChange: function () {
-                        $('#wrap').attr('class', 'main bg_0'+(swiper.realIndex + 1))
-                    },
                 },
                 navigation: {
                     nextEl: '.visual .swiper-button-next',
@@ -51,7 +45,62 @@
                 $('.category_menu').removeAttr('style');
                 $('#wrap').removeAttr('style');
             })
+            $('.action_bar .quick').click(function(){
+                $('.quick_menu').css({'bottom':'-6px'});
+                $('.quick_menu em').addClass('active')
+            })
+            $('.quick_menu').click(function(){
+                $('.quick_menu').removeAttr('style');
+                $('.quick_menu em').removeClass('active')
+            })
+            
+
+            $('.we_btn').click(function(){
+                $('.we_menu').css({'bottom':'-6px'});
+                $('.we_menu em').addClass('active')
+            })
+            $('.we_menu').click(function(){
+                $('.we_menu').removeAttr('style');
+                $('.we_menu em').removeClass('active')
+            })
+
+            $('.today_btn').click(function(){
+                $('.today_menu').css({'bottom':'-6px'});
+                $('.today_menu em').addClass('active')
+            })
+            $('.today_menu').click(function(){
+                $('.today_menu').removeAttr('style');
+                $('.today_menu em').removeClass('active')
+            })
+
+
+            $('.action_bar .quick').click(function(){
+                $('.quick_menu').css({'bottom':'-6px'});
+                $('.quick_menu em').addClass('active')
+            })
+            $('.quick_menu').click(function(){
+                $('.quick_menu').removeAttr('style');
+                $('.quick_menu em').removeClass('active')
+            })
+
+
+            $('.search_btn').click(function(){
+                $('.search_menu').css({'transform':'translateX(0px)'})
+                $('#wrap').css({'display':'none'})
+            })
+            $('.search_menu .back').click(function(){
+                $('.search_menu').removeAttr('style')
+                $('#wrap').css({'display':'block'})
+            })
+
+            $('.A_main_bottom a').click(function(){
+               $('html, body').animate({
+                scrollTop:0
+               },1000);
+            })
+
         });
+        
 
         let preScrollTop = 0;
 
@@ -71,37 +120,90 @@
     </script>
     <style>
         body {background-color: #fff;}
-        .main_visual {padding:0 20px; background-color:#fff !important;}
+        #wrap > div:first-of-type {position:relative;}
+        .main_visual {padding: 0px 26px; background-color:#fff !important;}
+        .we_btn {width:60px; height:60px; position:absolute; top:17px; right:7px;}
+        .today_btn {width:60px; height:60px; position:absolute; top:17px; right:72px;}
+        .search_btn {height:60px; position:absolute; top:95px; left:0; right:0;}
         .action_bar .category {width:50px; height:50px; position:absolute; bottom:28px; left:26px; display:block; z-index:100;}
-        .action_bar .quick {width:50px; height:50px; position:absolute; bottom:28px; right:26px; display:block; border:1px solid red; z-index:100;}
+        .action_bar .quick {width:50px; height:50px; position:absolute; bottom:28px; right:26px; display:block; z-index:100;}
         .category_menu {position:absolute; top:0; right:0px;; bottom:0; left:0; transition:all 0.3s; z-index: 100; transform:translateX(1000px);}
+        .search_menu {position:absolute; top:0; right:0px;; bottom:0; left:0; transition:all 0.3s; z-index: 100; transform:translateX(1000px);}
+        .search_menu .back {width:80px; height:60px; position:absolute; top:17px; left:18px; right:0;}
+        .search_menu .list_go {width:100%; height:300px; position:absolute; top:352px; left:0; right:0;}
+        .quick_menu, .today_menu, .we_menu {text-align:right; position:fixed; right:0px;; bottom:-141%; left:0; transition:all 0.3s; z-index:2 !important;}
+        .quick_menu img, .today_menu img, .we_menu img {position:relative; z-index:6;}
+        .quick_menu em.active, .today_menu em.active, .we_menu em.active {position:fixed; top:0; left:0; right:0; bottom:0; background-color:rgba(0,0,0,0.5); display:block; z-index:2;
+        }
+        .A_main_bottom {position:relative; background-color:#333 ;}
+        .A_main_bottom a {width:60px; height:60px; position:absolute; right:21px; bottom:19px; display:inline-block;}
+   
    </style>
 </head>
 
 <body>
     <div id="wrap">
         <div>
-            <img src="../images/mo/Type_A/A/A_main_top.png" alt="">
+            <a href="#none" class="search_btn"></a>
+            <a href="#none" class="today_btn"></a>
+            <a href="#none" class="we_btn"></a>
+            <img src="../images/mo/Type_A/A/A_main_top_01.png" alt="">
         </div>
         <div class="main_visual">
             <div class="visual swiper-container">
                 <ul class="swiper-wrapper">
                     <li class="swiper-slide">
-                        <a href="../html/mo_A_list.html"><img src="../images/mo/Type_A/A/baner1.png" /></a></li>
-                    <li class="swiper-slide"><a href="#none"><img src="../images/mo/Type_A/A/baner2.png" /></a></li>
-                    <li class="swiper-slide"><a href="#none"><img src="../images/mo/Type_A/A/baner3.png" /></a></li>
-                    <li class="swiper-slide"><a href="#none"><img src="../images/mo/Type_A/A/baner4.png" /></a></li>
+                        <a href="../html/mo_A_list.html"><img src="../images/mo/Type_A/A/banner_01.png"/></a></li>
+                    <li class="swiper-slide"><a href="../html/mo_A_list.html"><img src="../images/mo/Type_A/A/banner_03.png"/></a></li>
+                    <li class="swiper-slide"><a href="../html/mo_A_list.html"><img src="../images/mo/Type_A/A/banner_04.png"/></a></li>
+                    <li class="swiper-slide"><a href="../html/mo_A_list.html"><img src="../images/mo/Type_A/A/banner_02.png"/></a></li>
                 </ul>
             </div>
         </div>
 
-        <div>
-            <img src="../images/mo/Type_A/A/A_main_bottom.png" alt="">
+        <div class="A_main_bottom">
+            <img src="../images/mo/Type_A/A/A_main_bottom_01.png" alt="">
+            <a href="#none"></a>
         </div>
     </div>
+    <!-- category_menu -->
     <div class="category_menu">
         <img src="../images/mo/Type_A/A/category.png" alt="">
     </div>
+    <!-- // category_menu bar -->
+
+    <!-- quick_menu -->
+    <div class="quick_menu">
+        <img src="../images/mo/Type_A/A/close.png" alt="" style="margin-right:5px;">
+        <img src="../images/mo/Type_A/A/quick_menu_02.png" alt="">
+        <em></em>
+    </div>
+    <!-- // quick_menur -->
+
+    <!-- search_menu -->
+    <div class="search_menu">
+        <img src="../images/mo/Type_A/A/search_menu.png" alt="" style="margin-right:5px;">
+        <a href="../html/mo_A_list.html" class="list_go"></a>
+        <a href="" class="back"></a>
+    </div>
+    <!-- // search_menur -->
+
+    <!-- today_menu -->
+    <div class="today_menu">
+        <img src="../images/mo/Type_A/A/close.png" alt="" style="margin-right:5px;">
+        <img src="../images/mo/Type_A/A/today_menu.png" alt="">
+        <em></em>
+    </div>
+    <!-- // today_menu -->
+
+    <!-- we_menu -->
+    <div class="we_menu">
+        <img src="../images/mo/Type_A/A/close.png" alt="" style="margin-right:5px;">
+        <img src="../images/mo/Type_A/A/we_btn.png" alt="">
+        <em></em>
+    </div>
+    <!-- // we_menu -->
+    
 
     <!-- action bar -->
     <div class="action_bar">

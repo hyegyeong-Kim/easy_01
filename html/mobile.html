@@ -11,18 +11,21 @@
     <link rel="stylesheet" href="../css/swiper.css" type="text/css">
 
     <link rel="stylesheet" href="../css/mo_main.css" type="text/css">
+
+    <style>
+    </style>
     <script>
         $(document).ready(function(){
-            var frame_H = ($(window).height() * 0.9);
-            var frame_W = (frame_H * 0.52299829);
+            var frame_H = 1270.8;
+            var frame_W = 664.626;
 
             $('.iframe_inner').css({
                 width:frame_W,
                 height:frame_H,
-                paddingTop:(frame_H * 0.10221465) - 65 +'px',
-                paddingRight:(frame_W * 0.10749185),
-                paddingBottom:(frame_H * 0.10221465) - 33 +'px' ,
-                paddingLeft:(frame_W * 0.10749185),
+                paddingTop:35.8944,
+                paddingRight:63.4419,
+                paddingBottom:71.8944,
+                paddingLeft:63.4419,
             });
 
             var type = searchParams.get('type'),
