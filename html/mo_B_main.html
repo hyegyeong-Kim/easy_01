@@ -15,25 +15,7 @@
     <link rel="stylesheet" href="../css/main_a.css" type="text/css">
     <script>
         $(document).ready(function () {
-            var option_visual = {
-                slidesPerView: 1.1,
-                /*autoplay: {
-                    delay: 3000,
-                },*/
-                spaceBetween: 15,
-                loop: false,
-                keyboard: {
-                    enabled: true,
-                },
-                navigation: {
-                    nextEl: '.visual .swiper-button-next',
-                    prevEl: '.visual .swiper-button-prev',
-                },
-            };
 
-           
-
-            var swiper = new Swiper('.visual.swiper-container', option_visual);
 
             $('.category_btn').click(function(){
                 console.log('hihi')
@@ -72,11 +54,12 @@
     <style>
         body {background-color: #fff;}
         .hidden {overflow-y:hidden;}
+        .top_visual {margin-top:30px; background-color:#fff !important;}
         .action_bar .category_btn {width:60px; height:60px; position:absolute; bottom:47px; left:26px; display:block; z-index:100;}
         .category_menu {position:absolute; top:0; right:0px;; bottom:0; left:0; transition:all 0.3s; z-index: 100; transform:translateX(1000px);}
         .B_main_bottom {margin-top:60px;}
         .category_menu .close {width:60px; height:60px; position:absolute; top:11px; right:13px; display:block;}
-        .category_menu .check {width:200px; height:100px; position:absolute; top:601px; right:150px; display:block;}
+        .category_menu .check {width:341px; height:187px; position:absolute; top:364px; right:9px; display:block;}
 
    </style>
 </head>
@@ -85,6 +68,9 @@
     <div id="wrap">
         <div class="B_main_top">
             <img src="../images/mo/Type_B/B_main_top.png" alt="">
+        </div>
+        <div class="B_main_mid">
+            <img src="../images/mo/Type_B/main_mid.png" alt="">
         </div>
         <div class="B_main_bottom">
             <img src="../images/mo/Type_B/B_main_footer.png" alt="">
