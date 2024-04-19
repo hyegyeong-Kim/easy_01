@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -10,140 +11,93 @@
     <script src="../js/swiper.js"></script>
     <link rel="stylesheet" href="../css/swiper.css" type="text/css">
 
-    <link rel="stylesheet" href="../css/main_b.css" type="text/css">
+    <link rel="stylesheet" href="../css/mo_main.css" type="text/css">
+    <link rel="stylesheet" href="../css/main_a.css" type="text/css">
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
+            var option_visual = {
+                slidesPerView: 1.1,
+                /*autoplay: {
+                    delay: 3000,
+                },*/
+                spaceBetween: 15,
+                loop: false,
+                keyboard: {
+                    enabled: true,
+                },
+                navigation: {
+                    nextEl: '.visual .swiper-button-next',
+                    prevEl: '.visual .swiper-button-prev',
+                },
+            };
 
-            
+           
+
+            var swiper = new Swiper('.visual.swiper-container', option_visual);
+
+            $('.category_btn').click(function(){
+                console.log('hihi')
+                console.log($('.category_menu'))
+                $('.category_menu').css({'transform':'translateX(0px)'})
+                $('#wrap').css({'display':'none'})
+                $('.action_bar').css({'display':'none'})
+            })
+            $('.category_menu .close').click(function(){
+                $('.category_menu').removeAttr('style');
+                $('#wrap').removeAttr('style');
+                $('.action_bar').removeAttr('style');
+            })
+
         });
+        
 
         let preScrollTop = 0;
 
-        window.addEventListener('scroll',() => {
+        window.addEventListener('scroll', () => {
             let nextScrollTop = window.scrollY;
-        
-            if(preScrollTop < nextScrollTop) {
+
+            if (preScrollTop < nextScrollTop) {
                 $('.action_bar').css({
-                    bottom:-($('.action_bar').height())
+                    bottom: -($('.action_bar').height())
                 });
-                $('.float_wrap').removeAttr('style');
             }
             else { // (preScrollTop > nextScrollTop)
                 $('.action_bar').removeAttr('style');
-                $('.float_wrap').css({
-                    bottom:$('.action_bar').height() + 20
-                });
             }
             preScrollTop = nextScrollTop;
         });
     </script>
+    <style>
+        body {background-color: #fff;}
+        .action_bar .category_btn {width:60px; height:60px; position:absolute; bottom:47px; left:26px; display:block; z-index:100;}
+        .category_menu {position:absolute; top:0; right:0px;; bottom:0; left:0; transition:all 0.3s; z-index: 100; transform:translateX(1000px);}
+        .B_main_bottom {margin-top:60px;}
+        .category_menu .close {width:60px; height:60px; position:absolute; top:11px; right:13px; display:block; border:1px solid red;}
+        .category_menu .check {width:200px; height:100px; position:absolute; top:601px; right:150px; display:block;}
+
+   </style>
 </head>
+
 <body>
     <div id="wrap">
-        <div class="main">
-            <header>
-                <img src="../images/mo/Type_B/new_Header.png" alt="">
-                <a href="#" class="main_home"></a>
-                <a href="#none" class="main_movie"></a>
-                <a href="#none" class="talkback_go" onclick="$('.reply_talk').removeClass('active').attr('style','max-height:100vh; overflow-y:auto; position:fixed; bottom:0; right:0; left:0; display:none;')"></a>
-                <nav>
-                    <img src="../images/mo/Type_B/Menu.png" alt="">
-                </nav>
-            </header>
-            <div id="container" class="main_cot">
-                <div class="content">
-                    <section class="chart">
-                        <div class="inner">
-                            <img src="../images/mo/Type_B/Frame_48114611.png" alt="">
-                            <dl class="board_type_toggle single">
-                                <dt style="display:none"><a href="#none"><img src="../images/mo/Type_B/Frame 48114624 (1).png" alt=""></a></dt>
-                                <dd style="display:block;"><img src="../images/mo/Type_B/Frame_48114608TypeB_moviechart_1.png" alt=""></dd>
-                                <dt><a href="#none"><img src="../images/mo/Type_B/Frame 48114624.png" alt=""></a></dt>
-                                <dd><img src="../images/mo/Type_B/Fram_ 48114608.png" alt=""></dd>
-                                <dt><a href="#none"><img src="../images/mo/Type_B/Frame 48114625.png" alt=""></a></dt>
-                                <dd><img src="../images/mo/Type_B/Frame_48114608_1.png" alt=""></dd>
-                                <dt><a href="#none"><img src="../images/mo/Type_B/Frame 48114626.png" alt=""></a></dt>
-                                <dd><img src="../images/mo/Type_B/Frame_48114608_2.png" alt=""></dd>
-                            </dl>
-                            <div class="btn">
-                                <img src="../images/mo/Type_B/Group 48114624.png" alt="">
-                            </div>
-                        </div>
-                    </section>
-                    <div class="bg_1">
-                        <img src="../images/mo/Type_B/Group_48114618.png" alt="">
-                    </div>
-                    <section class="favorite">
-                        <img src="../images/mo/Type_B/Group _48114619.png" alt="">
-                    </section>
-                    <div class="bg_2">
-                        <img src="../images/mo/Type_B/Group_48114623.png" alt="">
-                    </div>
-                    <section class="event">
-                        <div class="inner">
-                            <img src="../images/mo/Type_B/Group 48114621.png" alt="">
-                            <div class="btn">
-                                <img src="../images/mo/Type_B/Group 48114624.png" alt="">
-                            </div>
-                        </div>
-                        <img src="../images/mo/Type_B/Group 48114614.png" alt="" class="cht">
-                    </section>
-                </div>
-            </div>
-            <footer>
-                <img src="../images/mo/Type_B/Footer.png" alt="">
-                <div><img src="../images/mo/Type_B/Group_48114720.png" alt=""></div>
-            </footer>
+        <div class="B_main_top">
+            <img src="../images/mo/Type_B/B_main_top.png" alt="">
         </div>
-
-        <div class="talkback">
-            <header>
-                <img src="../images/mo/Type_B/new2_header.png" alt="">
-                <a href="#" class="main_home"></a>
-                <a href="#none" class="main_movie"></a>
-                <a href="#none" class="talkback_go" onclick="$('.reply_talk').removeClass('active').attr('style','max-height:100vh; overflow-y:auto; position:fixed; bottom:0; right:0; left:0; display:none;')"></a>
-                <div>
-                    <img src="../images/mo/Type_B/Group_48114626.png" alt="">
-                </div>
-                <nav>
-                    <img src="../images/mo/Type_B/Frame 48114698.png" alt="">
-                </nav>
-            </header>
-    
-            <div id="container" class="" style="position:relative;">
-                <div class="content">
-                    <div class="inner">
-
-                        <!-- <label class="check_ani">
-                            <span><img src="../images/mo/Type_B/스포일러 포함.png" alt=""></span>
-                            <input type="checkbox">
-                            <em></em>
-                        </label> -->
-
-                        <section onclick="$('.reply_talk').addClass('active').slideDown(); $('body').css({height:'100%', overflow:'hidden'}); $('.action_bar').css({bottom:'-76.2px'})">
-                            <img src="../images/mo/Type_B/Frame 48114731.png" alt="">
-                        </section>
-                    </div>
-                </div>
-                <!-- 댓톡 -->
-                <p class="reply_talk" style="max-height:100vh; overflow-y:auto; position:fixed; bottom:0; right:0; left:0; display:none;" onclick="$(this).slideUp(); $('body').removeAttr('style'); setTimeout(function(){$(location).attr('href', './mo_B_sub_01_1.html')},100);">
-                    <img style="position:relative; z-index:15; display:block;" src="../images/mo/Type_B/reply_talk.png" />
-                    <a href="./mo_B_main.html" style="position:absolute; top:0; right:0;"></a>
-                </p>
-                <!-- //댓톡 -->
-            </div>
-           
+        <div class="B_main_bottom">
+            <img src="../images/mo/Type_B/B_main_footer.png" alt="">
         </div>
     </div>
-
+    <!-- category_menu -->
+    <div class="category_menu">
+        <img src="../images/mo/Type_B/category.png" alt="">
+        <a href="#none" class="close"></a>
+        <a href="../html/mo_B_list.html" class="check"></a>
+    </div>
+    <!-- // category_menu bar -->
     <!-- action bar -->
     <div class="action_bar">
-        <footer>
-            <img src="../images/mo/Type_B/Frame_48114730.png" alt="">
-            <a href="../html/mo_B_main.html" class="homego"></a>
-            <a href="../html/mo_B_sub_01.html" class="review"></a>
-            <a href="../html/mo_B_sub_02.html" class="mypage"></a>
-        </footer>
+        <img src="../images/mo/Type_B/B_bar2.png">
+        <a href="#none" class="category_btn"></a>
     </div>
     <!-- //action bar -->
 
@@ -164,6 +118,6 @@
         </div>
     </div>
     <!-- //loading -->
-    <script src="../js/type_b.js"></script>
 </body>
+
 </html>

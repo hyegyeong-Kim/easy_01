@@ -10,11 +10,31 @@
     <script src="../js/swiper.js"></script>
     <link rel="stylesheet" href="../css/swiper.css" type="text/css">
 
-    <link rel="stylesheet" href="../css/main_b_sub_2.css" type="text/css">
+    <link rel="stylesheet" href="../css/mo_main.css" type="text/css">
+    <link rel="stylesheet" href="../css/main_a.css" type="text/css">
+    <style>
+        .detail_top_menu > img {position:relative; z-index:5;}
+        .cart_go {width:50px; height:50px; position:absolute; top:20px; right:20px; z-index:100; display:block;}
+        .detail_img {padding-top:60px;}
+        .detail_top_menu .top_menu {position:absolute; top:-80px;}
+        .filter_menu {text-align:right; position:fixed; right:0px;; bottom:-141%; left:0; transition:all 0.3s; z-index: 10;}
+        .filter_menu a {display:block;height:100%;}
+        .filter_menu img {position:relative; z-index:6;}
+        .filter_menu em.active {position:fixed; top:0; left:0; right:0; bottom:0; background-color:rgba(0,0,0,0.5); display:block; z-index:2;
+        }
+    </style>
     <script>
         $(document).ready(function(){
-
-            
+        
+            $('.action_bar').click(function(){
+                $('.filter_menu').css({'bottom':'0px'})
+                $('.filter_menu em').addClass('active')
+            })
+            $('.filter_menu').click(function(){
+                $('.filter_menu').removeAttr('style');
+                $('.filter_menu em').removeClass('active')
+            })
+        
         });
 
         let preScrollTop = 0;
@@ -27,12 +47,14 @@
                     bottom:-($('.action_bar').height())
                 });
                 $('.float_wrap').removeAttr('style');
+                $('.top_menu').css({top:'60px'});
             }
             else { // (preScrollTop > nextScrollTop)
                 $('.action_bar').removeAttr('style');
                 $('.float_wrap').css({
-                    bottom:$('.action_bar').height() + 20
+                    bottom:$('.action_bar').height() + 60
                 });
+                $('.top_menu').removeAttr('style');
             }
             preScrollTop = nextScrollTop;
         });
@@ -40,24 +62,15 @@
 </head>
 <body>
     <div id="wrap">
-        <div id="container" style="margin-top: 20px; background-color: #fff;">
-            <div class="content">
-                <a href="../html/mo_B_main.html" class="close"></a>
-                <img src="../images/mo/Type_B/Header-2.png" alt="" class="title">
-                <img src="../images/mo/Type_B/댓글영역_(2).png" alt=""> 
-                <img src="../images/mo/Type_B/Key.png" alt="" class="key">
-            </div>
-            
+        <div class="detail_top_menu">
+            <img src="../images/mo/Type_B/detail.png" alt="">
         </div>
-        <footer>
-        </footer>
     </div>
 
+    
     <!-- action bar -->
     <div class="action_bar">
-        <ul>
-            <li>액션바</li>
-        </ul>
+        <a href="#none"><img src="../images/mo/Type_B/detail_actionbar.png"></a>
     </div>
     <!-- //action bar -->
 

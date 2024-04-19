@@ -10,11 +10,32 @@
     <script src="../js/swiper.js"></script>
     <link rel="stylesheet" href="../css/swiper.css" type="text/css">
 
-    <link rel="stylesheet" href="../css/main_b_sub_2.css" type="text/css">
+    <link rel="stylesheet" href="../css/mo_main.css" type="text/css">
+    <link rel="stylesheet" href="../css/main_a.css" type="text/css">
+    <style>
+        .list_img {position:relative;}
+        .hidden {overflow-y:hidden;}
+        .filter_btn {width:100px; height:60px; position:absolute; top:1420px; right:20px;} 
+        .filter_menu {width:100%; overflow-y:scroll; text-align:right; position:fixed; top:0; right:0; bottom:0; left:0; z-index:2; transform:translateX(1000px); transition:all 0.3s;}
+        .filter_menu em.active{content:''; height:151vh; background-color:rgba(0,0,0,0.5); position:fixed; top:0; left:0; right:0; bottom:0; display:block; z-index:5; overflow-y:scroll;}
+        .filter_menu img {width:73%; position:relative; z-index:6;}
+        .detail_btn {width:500px; height:400px; position:absolute; top:933px; left:0; display:block;}
+    </style>
     <script>
         $(document).ready(function(){
-
-            
+        
+            $('.filter_btn').click(function(){
+                $('.filter_menu').css({'transform':'translateX(0px)'})
+                $('body').addClass('hidden')
+                $('.filter_menu em').addClass('active')
+                $('.action_bar').css({"display":"none"})
+            })
+            $('.filter_menu').click(function(){
+                $('.filter_menu').removeAttr('style');
+                $('body').removeClass('hidden')
+                $('.filter_menu em').removeClass('active')
+            })
+        
         });
 
         let preScrollTop = 0;
@@ -27,12 +48,14 @@
                     bottom:-($('.action_bar').height())
                 });
                 $('.float_wrap').removeAttr('style');
+                $('.top_menu').css({top:'58px'});
             }
             else { // (preScrollTop > nextScrollTop)
                 $('.action_bar').removeAttr('style');
                 $('.float_wrap').css({
                     bottom:$('.action_bar').height() + 20
                 });
+                $('.top_menu').removeAttr('style');
             }
             preScrollTop = nextScrollTop;
         });
@@ -40,25 +63,22 @@
 </head>
 <body>
     <div id="wrap">
-        <div id="container">
-            <div class="content">
-                <img src="../images/mo/Type_B/CGV_TypeB_06마이페이지_01남긴톡백.png" alt="">
-                <a href="../html/mo_B_main.html" class="home"></a>
-                <a href="../html/mo_B_sub_02.html" class="talk"></a>
-                <a href="../html/mo_B_sub_03.html" class="movie"></a>
-                <a href="../html/mo_B_sub_04.html" class="cgvbag"></a>
-            </div>
+        <div class="list_img">
+            <img src="../images/mo/Type_B/list_01.png" alt="">
+            <a href="#none" class="filter_btn"></a>
+            <a href="../html/mo_B_detail.html" class="detail_btn"></a>
         </div>
     </div>
+    <div class="filter_menu">
+        <img src="../images/mo/Type_B/B_filter.png" alt="">
+        <em></em>
+    </div>
 
+
+    
     <!-- action bar -->
     <div class="action_bar">
-        <footer>
-            <img src="../images/mo/Type_B/Frame_48114730.png" alt="">
-            <a href="../html/mo_B_main.html" class="homego"></a>
-            <a href="../html/mo_B_sub_01.html" class="review"></a>
-            <a href="../html/mo_B_sub_02.html" class="mypage"></a>
-        </footer>
+        <a href="#none"><img src="../images/mo/Type_A/A/main_actionbar.png"></a>
     </div>
     <!-- //action bar -->
 
