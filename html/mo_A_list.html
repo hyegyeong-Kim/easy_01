@@ -13,27 +13,28 @@
     <link rel="stylesheet" href="../css/mo_main.css" type="text/css">
     <link rel="stylesheet" href="../css/main_a.css" type="text/css">
     <style>
-        .black {position:relative;}
-        .black:after {background-color:#000; content:''; position:absolute; top:0; right:0; bottom:79px; left:0; z-index:-1;}
+        .hidden {overflow-y:hidden;}
         .list_top_menu {position:fixed;top:0; left:0; right:0; z-index: 2;}
         .list_top_menu > img {position:relative; z-index:5;}
         .list_top_menu .top_menu {position:absolute; top:-80px;}
         .list_img_b {position:relative;}
         .list_img_b a {position:absolute; top:115px; right:22px; display:block; width:40px; height:40px;}
-        .filter_menu {text-align:right; position:fixed; top:0; right:0px;; bottom:0; left:0; transition:all 0.3s; z-index: 5; transform:translateX(1000px);}
-        .filter_menu em.active {position:fixed; top:0; left:0; right:0; bottom:0; background-color:rgba(0,0,0,0.5); display:block; z-index:2;
-        }
-        .filter_menu img {width:66%; position:relative; z-index:6;}
+        .filter_menu {text-align:right; overflow-y:scroll; position:fixed; top:0; right:0px;; bottom:0; left:0; transition:all 0.3s; z-index: 5; transform:translateX(1000px);}
+        .filter_menu em.active {height:120vh; background-color:rgba(0,0,0,0.5); position:fixed; top:0; left:0; right:0; bottom:0; display:block; z-index:5; overflow-y:scroll;}
+        .filter_menu img {width:75%; position:relative; z-index:6;}
     </style>
     <script>
         $(document).ready(function(){
         
             $('.list_img_b a').click(function(){
                 $('.filter_menu').css({'transform':'translateX(0px)'})
+                $('body').addClass('hidden')
                 $('.filter_menu em').addClass('active')
+                $('.action_bar').css({"display":"none"})
             })
             $('.filter_menu').click(function(){
                 $('.filter_menu').removeAttr('style');
+                $('body').removeClass('hidden')
                 $('.filter_menu em').removeClass('active')
             })
         
@@ -78,7 +79,7 @@
     </div>
 
     <div class="filter_menu">
-        <img src="../images/mo/Type_A/A/filter_menu_01.png" alt="">
+        <img src="../images/mo/Type_A/A/A_filter_menu.png" alt="">
         <em></em>
     </div>
 
